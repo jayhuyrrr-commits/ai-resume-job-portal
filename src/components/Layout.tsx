@@ -164,9 +164,9 @@ export default function Layout({ children, user }: LayoutProps) {
           <div>
             <h4 className="text-white font-bold mb-4">Support</h4>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><a href="#" className="hover:text-brand-accent transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-accent transition-colors">Terms of Service</a></li>
+              <li><Link to="/help" className="hover:text-brand-accent transition-colors">Help Center</Link></li>
+              <li><Link to="/privacy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link></li>
+              <li><Link to="#" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

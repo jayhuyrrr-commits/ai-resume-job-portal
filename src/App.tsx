@@ -14,6 +14,8 @@ import Dashboard from './pages/Dashboard';
 import ResumeBuilder from './pages/ResumeBuilder';
 import JobPortal from './pages/JobPortal';
 import AdminDashboard from './pages/AdminDashboard';
+import HelpCenter from './pages/HelpCenter';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Layout from './components/Layout';
 
 export default function App() {
@@ -64,6 +66,8 @@ export default function App() {
         <Route path="/" element={<Layout user={user}><Home /></Layout>} />
         <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
         <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <Register />} />
+        <Route path="/privacy" element={<Layout user={user}><PrivacyPolicy /></Layout>} />
+        <Route path="/help" element={<Layout user={user}><HelpCenter /></Layout>} />
         
         {/* Protected Routes */}
         <Route path="/dashboard" element={user ? <Layout user={user}><Dashboard user={user} /></Layout> : <Navigate to="/login" />} />
