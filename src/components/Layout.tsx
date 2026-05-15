@@ -166,7 +166,7 @@ export default function Layout({ children, user }: LayoutProps) {
             <ul className="space-y-2 text-slate-400 text-sm">
               <li><Link to="/help" className="hover:text-brand-accent transition-colors">Help Center</Link></li>
               <li><Link to="/privacy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>
+              <li><Link to="/terms" className="hover:text-brand-accent transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

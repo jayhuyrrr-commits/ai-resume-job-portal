@@ -16,6 +16,7 @@ import JobPortal from './pages/JobPortal';
 import AdminDashboard from './pages/AdminDashboard';
 import HelpCenter from './pages/HelpCenter';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import Layout from './components/Layout';
 
 export default function App() {
@@ -68,6 +69,7 @@ export default function App() {
         <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <Register />} />
         <Route path="/privacy" element={<Layout user={user}><PrivacyPolicy /></Layout>} />
         <Route path="/help" element={<Layout user={user}><HelpCenter /></Layout>} />
+        <Route path="/terms" element={<Layout user={user}><TermsOfService /></Layout>} />
         
         {/* Protected Routes */}
         <Route path="/dashboard" element={user ? <Layout user={user}><Dashboard user={user} /></Layout> : <Navigate to="/login" />} />
