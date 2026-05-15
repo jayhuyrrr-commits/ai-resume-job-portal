@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "User account and profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "resumes": {
+      "title": "Resume",
+      "description": "User resume data",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "personalInfo": { "type": "object" },
+        "skills": { "type": "array" },
+        "education": { "type": "array" },
+        "experience": { "type": "array" },
+        "projects": { "type": "array" },
+        "templateId": { "type": "string" }
+      }
+    },
+    "jobs": {
+      "title": "Job Posting",
+      "description": "Available job opportunities",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "company": { "type": "string" },
+        "location": { "type": "string" },
+        "salary": { "type": "string" },
+        "type": { "type": "string" },
+        "category": { "type": "string" }
+      }
+    },
+    "applications": {
+      "title": "Job Application",
+      "description": "User applications for jobs",
+      "type": "object",
+      "properties": {
+        "jobId": { "type": "string" },
+        "userId": { "type": "string" },
+        "resumeId": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": { "description": "User profiles", "schema": "users" },
+    "/resumes/{resumeId}": { "description": "Resumes created by users", "schema": "resumes" },
+    "/jobs/{jobId}": { "description": "Job listings", "schema": "jobs" },
+    "/applications/{applicationId}": { "description": "Job applications", "schema": "applications" }
+  }
+}
